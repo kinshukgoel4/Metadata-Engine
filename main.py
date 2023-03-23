@@ -41,3 +41,7 @@ class Engine:
             metadata_file = self.metadata_dir[:-5] + f"_frame_{i}.json"
             with open(metadata_file, 'w') as outfile:
                 json.dump(metadata, outfile)
+
+    # Method to run the detection process
+    def run(self):
+        self.detect_people()
