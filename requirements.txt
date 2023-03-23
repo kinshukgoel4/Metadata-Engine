@@ -1,0 +1,7 @@
+numpy==1.19.5
+opencv-python==4.5.5.62
+Pillow==8.4.0
+tqdm==4.62.3
+torch==1.9.1
+torchvision==0.10.1
+yolov5==5.0.5
