@@ -7,6 +7,7 @@ import numpy as np
 import json
 # Define a class called Engine to process the video and detect people
 class Engine:
+    
     def __init__(self, video_path, metadata_dir):
         # Initialize the path of the video and directory to save metadata
         self.video_path = video_path
@@ -17,3 +18,26 @@ class Engine:
         self.vidcap = cv2.VideoCapture(self.video_path)
         self.fps = self.vidcap.get(cv2.CAP_PROP_FPS)
         self.num_frames = int(self.vidcap.get(cv2.CAP_PROP_FRAME_COUNT))
+
+    # Method to detect people in each frame of the video and save metadata
+    def detect_people(self):
+        # Loop through each frame of the video
+        for i in tqdm(range(self.num_frames)):
+            # Read the frame from the video
+            success, image = self.vidcap.read()
+            if not success:
+                break
+            # Convert the image to a PIL Image and run it through YOLOv5 model
+            image = Image.fromarray(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
+            results = self.model(image, size=640)
+            # Get the bounding boxes of detected people and save the metadata in a dictionary
+            boxes = results.xyxy[0][:, :4].cpu().numpy().tolist()
+            metadata = {
+                "frame_number": i,
+                "boxes": boxes,
+                "num_object": len(boxes)
+            }
+            # Save the metadata in a json file for each frame
+            metadata_file = self.metadata_dir[:-5] + f"_frame_{i}.json"
+            with open(metadata_file, 'w') as outfile:
+                json.dump(metadata, outfile)
