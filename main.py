@@ -50,14 +50,15 @@ class Engine:
 # Define a list of video paths and metadata directory
 
 #Please define the appropriate video paths as per below given example
-video_paths = ["video1.mp4", "video2.mp4", "video3.mp4"]
+video_paths = ["path\to\video1.mp4", "path\to\video2.mp4", "path\to\video3.mp4"]
 
 #Please mention the appropriate directories to save metadata as per below given example
-metadata_dirs = [r"C:\Users\kinsh\Downloads\metadataframesforvideo1\metadata1",r"C:\Users\kinsh\Downloads\metadataframesforvideo1\metadata2",r"C:\Users\kinsh\Downloads\metadataframesforvideo1\metadata1"]
+metadata_dirs = [r"path\to\metadata1",r"path\to\metadata1",r"path\to\metadata1"]
 
 # Loop through each video path and run the detection process using the Engine class
 for video_path, metadata_dir in zip(video_paths, metadata_dirs):
-    # Update metadata_dir to use the directory corresponding to the current video
-    metadata_dir = metadata_dir.replace(video_paths[0], video_path)
+    # Modify the metadata_dir to be relative to the current working directory, and ensure that the metadata directories exist by creating them if necessary.
+    metadata_dir = os.path.join(os.getcwd(), metadata_dir)
+    os.makedirs(metadata_dir, exist_ok=True)
     engine = Engine(video_path, metadata_dir)
     engine.run()
