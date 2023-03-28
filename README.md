@@ -1,19 +1,19 @@
-# Metadata Engine
+# Metadata Engine 🔍🕵️‍♀️
 
 Python scripts to build a Metadata Engine which takes a large amount of raw HD video footage, generate useful and well-defined metadata for each video file, each distinct moment called frame in each video file. 
 
 
-## What it does?
+## What it does?🤔
 
 This system uses the YOLOv5 object detection model to detect people in a given video and save the metadata for each frame in a JSON file. It also draws bounding boxes around the detected people in real-time for visualization purposes. With huge amounts of raw HD video footage, it generates a variety of metadata, such as per-frame face tracking, unique face detection, and person tokenization per video.
 
 
-## System Overview
+## System Overview 🚀
 
 The system takes as input a video file and a directory path to save the metadata files. It uses OpenCV to read the frames from the video and passes each frame through the YOLOv5 model to detect people. The bounding box coordinates for the detected people are saved in a JSON file along with the frame number and the number of detected people in the frame.
 
 
-## Metadata Generated
+## Metadata Generated📈
 
 * `frame_number`: the frame number of the current frame
 
@@ -29,11 +29,11 @@ The system takes as input a video file and a directory path to save the metadata
  
  The frame number is included to keep track of the metadata for each frame. The bounding box coordinates are necessary to locate the detected people in the frame, and the number of detected people provides an overview of the person density in the video.
 
- ## Why did we chose to display this metadata?
+ ## Why did we chose to display this metadata?🤔
 
  We chose these metadata categories because they provide a concise summary of the person detection results and are sufficient for further analysis and processing.
 
-## Perfomance
+## Perfomance💪
 
 The performance of the Engine can be evaluated in terms of its [real-time factor](https://openvoice-tech.net/index.php/Real-time-factor#:~:text=If%20it%20takes%20time%20f%20%28d%29%20to%20process,1%2C%20the%20processing%20is%20done%20%22in%20real%20time%22.). The Engine processes each frame of the video and generates metadata in the form of a JSON file for each frame. It also displays the video with bounding boxes around the detected people.
 
@@ -45,7 +45,7 @@ To further improve the performance of the Engine, it may be helpful to experimen
 
 Overall, the given code has the potential to achieve real-time performance on mid-range machines with a decent GPU. However, to achieve better performance on weaker machines or to scale the Engine to process larger videos, further optimization may be necessary.
 
-## Perfomance Benchmarks
+## 🚀 Performance Benchmarks
 
 The given code performs person detection using the YOLOv5 model and saves the metadata for each frame in a JSON file. It also displays the frames with bounding boxes around the detected persons in real-time.
 
@@ -56,21 +56,23 @@ The hardware specs of the device used for testing include:
 * 64-bit operating system with no pen or touch input.
 
 After testing the code on a video, the *[real-time](https://openvoice-tech.net/index.php/Real-time-factor#:~:text=If%20it%20takes%20time%20f%20%28d%29%20to%20process,1%2C%20the%20processing%20is%20done%20%22in%20real%20time%22.) factor was found to be >1*, indicating that the code takes longer to process each frame than the actual time of the video.
-## Performance Evaluation
+
+## 💻 Performance Evaluation
+
 We ran the script on a desktop computer with an AMD Ryzen 5 4600H processor and 8 GB of RAM. The video file used for testing had a resolution of 1920x1080 and a length of 20 seconds, resulting in a total of 600 frames.
 
 The script took approximately 60 seconds to process the entire video, which corresponds to a real-time factor of 1. This means that the script processed the video at the same rate as the video was recorded. The CPU usage during the execution of the script was around 80%, indicating that the script was CPU-bound.
 
 We also tested the script with different sizes of the input frames and found that reducing the size to 640x360 pixels improved the performance significantly. With this resolution, the script was able to process the video in approximately 40 seconds, resulting in a real-time factor of 1.5. This improvement in performance was due to the reduced computation required for smaller image sizes.
 
-## Trade-offs
+## ⚖️ Trade-offs
 The performance of the script can be improved by making certain trade-offs. One option is to reduce the frame rate of the video. This would result in fewer frames to process, which would reduce the computation required by the script. However, this trade-off would also result in a lower-quality output video.
 
 Another option is to use a smaller and faster object detection model. The YOLOv5s model used in the script is a relatively small and fast model compared to other object detection models. However, there are even smaller and faster models, such as YOLOv3-tiny and SSD MobileNet, which could improve the performance of the script at the cost of reduced accuracy.
 
 Finally, another option is to use hardware acceleration, such as a GPU or an ASIC, to speed up the computation. This would require additional hardware and may not be cost-effective for small-scale applications. However, for large-scale applications, such as real-time video surveillance, hardware acceleration can significantly improve the performance of the script.
 
-## Performance Considerations
+## 💡 Performance Considerations
 
 To optimize the performance of the code, we can consider the following suggestions:
 
@@ -85,7 +87,7 @@ To optimize the performance of the code, we can consider the following suggestio
 By implementing these suggestions, we can improve the performance of the code and reduce the real-time factor.
 
 
-## Resources Used
+## 📚 Resources Used
 
 The system uses the following libraries and resources:
 
@@ -101,7 +103,7 @@ The system uses the following libraries and resources:
 
 
 
-## Requirements
+## 🛠️ Requirements
 
 The following libraries are required to run this code:
 
@@ -114,7 +116,7 @@ The following libraries are required to run this code:
 
 The YOLOv5 model is loaded using the PyTorch `torch.hub.load` method.
 
-## Usage
+## 🚀 Usage
 
 To use this code, simply instantiate an Engine object with the path to the video file and the directory where the metadata files should be saved. Then call the run or detect_people method to start the person detection process.
 
@@ -129,7 +131,7 @@ engine.run()
 The run method will display the video frames with the detected bounding boxes in a window. The detect_people method performs the same detection process but does not display the frames in a window.
 
 
-## Setup Instructions
+## Setup Instructions 🛠️
 1. Clone the Reporsitory
 
 git clone "https://github.com/vipassana-01/metadata-engine.git"
@@ -154,5 +156,5 @@ python engine.py
 
 > *Note*: You should replace engine.py with the actual name of the Python script containing the code. Additionally, you should make sure that the video file and metadata directory exist and are accessible.
 
-## Conclusion
+## Conclusion 🎉
 In conclusion, the given script performs person detection on a video file in real-time using the YOLOv5 object detection model. The performance of the script can be improved by reducing the size of the input frames, using a smaller and faster object detection model, or using hardware acceleration. However, these trade-offs come at the cost of reduced accuracy, lower-quality output, or additional hardware requirements.
