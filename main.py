@@ -10,7 +10,6 @@ import os
 
 # Define a class called Engine to process the video and detect people
 class Engine:
-    
     def __init__(self, video_path, metadata_dir):
         # Initializes the Engine class with the video path and metadata directory
         self.video_path = video_path
@@ -29,9 +28,12 @@ class Engine:
         self.height = int(self.vidcap.get(cv2.CAP_PROP_FRAME_HEIGHT))
         # Sets the codec used for the video to self.codec
         self.codec = cv2.VideoWriter_fourcc(*'mp4v')
+        # Initializes the metadata list
+        self.metadata_list = []
+        self.labels = self.model.module.names if hasattr(self.model, 'module') else self.model.names
 
-     # Method to detect people in each frame of the video and save metadata
-     def detect_people(self):
+    # Method to detect people in each frame of the video and save metadata
+    def detect_person_and_objects_in_frame(self):
         # Loops through each frame in the video
         for i in tqdm(range(self.num_frames)):
             # Reads the frame from the video and converts it to a PIL Image object
@@ -45,22 +47,53 @@ class Engine:
             num_objects = len(boxes)
             # Creates a dictionary to store metadata for the current frame
             metadata = {
-                "frame_number": i,
+                "frame_number": i+1,
                 "boxes": boxes,
                 "num_objects": num_objects,
                 "frame_width": self.width,
                 "frame_height": self.height,
                 "fps": self.fps,
                 "codec": self.codec
+                    
             }
-            # Saves the metadata dictionary to a json file
-            metadata_file = os.path.join(self.metadata_dir, f"metadata_{i}.json")
-            with open(metadata_file, 'w') as outfile:
-                json.dump(metadata, outfile)
+            class_ids = results.xyxy[0][:, 5].cpu().numpy().tolist()
+            # Create a list to store metadata for each object
+            objects_metadata = []
+            for j, box in enumerate(boxes):
+                # Extract the coordinates of the bounding box
+                x1, y1, x2, y2 = box
+                # Extract the object class and confidence score
+                obj_class = self.labels[int(class_ids[j])]
+                obj_conf = round(float(results.xyxy[0][j][4]), 2)
+                # Store the metadata in a dictionary
+                obj_metadata = {
+                    "object_id": j+1,
+                    "object_class": obj_class,
+                    "object_confidence": obj_conf,
+                    "bounding_box": [x1, y1, x2, y2]
+                }
+                objects_metadata.append(obj_metadata)
+            # Add the objects_metadata to the metadata dictionary
+            metadata["num_objects"] = len(objects_metadata)
+            metadata["objects_data"] = objects_metadata
+            # Appends the metadata dictionary to the metadata list
+            self.metadata_list.append(metadata)
+
+
 
     def run(self):
-        # Runs the detect_people method to detect objects in the video frames and save metadata for each frame
-        self.detect_people()
+        # Runs the detect_person_and_objects_in_frame method to detect person and objects in the video frames and save metadata for each frame
+        self.detect_person_and_objects_in_frame()
+        # Combines all metadata dictionaries into a single dictionary
+        combined_metadata = {
+            "num_frames": self.num_frames,
+            "metadata": self.metadata_list
+        }
+        # Saves the combined metadata dictionary to a json file
+        metadata_file = os.path.join(self.metadata_dir, "metadata.json")
+        with open(metadata_file, 'w') as outfile:
+            json.dump(combined_metadata, outfile)
+
 
 # Define a list of video paths and metadata directories
 
