@@ -142,24 +142,31 @@ The run method will display the video frames with the detected bounding boxes in
 ## Setup Instructions 🛠️
 1. Clone the Reporsitory
 
+```
 git clone "https://github.com/vipassana-01/metadata-engine.git"
+```
 
 
 2. To set up the environment using pip, run the following command in the terminal:
 
 
+```
 pip install -r requirements.txt
+```
 
 3. To set up the environment using conda,run the following command in the terminal:
 
-bash
+```bash
 conda env create -f environment.yml
 conda activate yolov5
+```
 
 4. After activating the environment, then run the Python script using the command:
 
 
+```
 python engine.py
+```
 
 
 > *Note*: You should replace engine.py with the actual name of the Python script containing the code. Additionally, you should make sure that the video file and metadata directory exist and are accessible.
