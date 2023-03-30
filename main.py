@@ -98,11 +98,16 @@ class Engine:
 
 # Define a list of video paths and metadata directories
 
-#Pass video paths as space seperated strings in command line
-video_paths = sys.argv[1].split()
+#Get the command line arguments
+args = sys.argv[1:]
+if len(args) % 2 != 0:
+    raise ValueError("Number of arguments must be even.")
 
-#Pass directories to save metadata as space seperated strings in command line after specifying video paths
-metadata_dirs = sys.argv[2].split()
+#Pass video paths as space seperated strings in command line.
+video_paths = args[:len(args)//2]
+
+#Pass metadata directories as space seperated strings in command line after specifying video paths.
+metadata_dirs = args[len(args)//2:]
 
 # Loop through each video path and run the detection process using the Engine class
 for video_path, metadata_dir in zip(video_paths, metadata_dirs):
