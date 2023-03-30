@@ -6,6 +6,7 @@ from PIL import Image
 import numpy as np
 import json
 import os
+import sys
 
 
 # Define a class called Engine to process the video and detect people
@@ -97,11 +98,16 @@ class Engine:
 
 # Define a list of video paths and metadata directories
 
-#Please define the appropriate video paths as per below given example
-video_paths = ["path\to\video1.mp4", "path\to\video2.mp4", "path\to\video3.mp4"]
+#Get the command line arguments
+args = sys.argv[1:]
+if len(args) % 2 != 0:
+    raise ValueError("Number of arguments must be even.")
 
-#Please mention the appropriate directories to save metadata as per below given example
-metadata_dirs = [r"path\to\metadata1",r"path\to\metadata1",r"path\to\metadata1"]
+#Pass video paths as space seperated strings in command line.
+video_paths = args[:len(args)//2]
+
+#Pass metadata directories as space seperated strings in command line after specifying video paths.
+metadata_dirs = args[len(args)//2:]
 
 # Loop through each video path and run the detection process using the Engine class
 for video_path, metadata_dir in zip(video_paths, metadata_dirs):
