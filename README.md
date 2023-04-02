@@ -13,12 +13,12 @@ Python scripts to build a Metadata Engine which takes a large amount of raw HD v
 
 ## What it does?🤔
 
-This system uses the YOLOv5 object detection model to detect people in a given video and save the metadata for each frame in a JSON file. It also draws bounding boxes around the detected people in real-time for visualization purposes. With huge amounts of raw HD video footage, it generates a variety of metadata, such as per-frame face tracking, unique face detection, and person tokenization per video.
+This system uses the YOLOv5 object detection model to detect people in a given video and save the metadata for each frame in a JSON file. It also draws bounding boxes around the detected people in real-time for visualization purposes. With huge amounts of raw HD video footage, it generates a variety of metadata, such as per-frame face tracking, unique face detection, object detection and person tokenization per video. The user gets a whatsapp message regarding the status of metadata generation. It even stores the json ouput file in CockroachDB Database. 
 
 
 ## System Overview 🚀
 
-The system takes as input a video file and a directory path to save the metadata files. It uses OpenCV to read the frames from the video and passes each frame through the YOLOv5 model to detect people. The bounding box coordinates for the detected people are saved in a JSON file along with the frame number and the number of detected people in the frame.
+The system takes as input a video file and a directory path from command line to save the metadata files. It uses OpenCV to read the frames from the video and passes each frame through the YOLOv5 model to detect people. The bounding box coordinates for the detected people are saved in a JSON file along with the frame number and the number of detected people in the frame. 
 
 
 ## Metadata Generated📈
@@ -33,13 +33,32 @@ The system takes as input a video file and a directory path to save the metadata
 
     xmax and ymax: coordinates of the bottom-right corner of the bounding box.
 
-* `num_people`: the number of people detected in the current frame.
+* `num_object`: the number of object detected in the current frame.
+
+
+* `frame_width`: The width of the frame in pixels
+
+* `frame_height`: The height of the frame in pixels
+
+* `fps`: The frame rate of the video
+
+* `codec`: The video codec used
+
+For each detected object in the frame, the following metadata is saved in a dictionary:
+
+* `object_id`: The ID number of the detected object
+
+* `object_class`: The class of the detected object (e.g. person, car, etc.)
+
+* `object_confidence`: The confidence score of the object detection
+
+* `bounding_box`: The coordinates of the bounding box around the object
  
  The frame number is included to keep track of the metadata for each frame. The bounding box coordinates are necessary to locate the detected people in the frame, and the number of detected people provides an overview of the person density in the video.
 
  ## Why did we chose to display this metadata?🤔
 
- We chose these metadata categories because they provide a concise summary of the person detection results and are sufficient for further analysis and processing.
+ We chose these metadata categories because they provide a concise summary of the person, object detection results and are sufficient for further analysis and processing.
 
 ## Perfomance💪
 
@@ -234,3 +253,12 @@ In conclusion, the given script performs person detection on a video file in rea
 ## License🎴
 
 This project is licensed under the [MIT License](https://opensource.org/license/mit/) - see the [LICENSE file](https://opensource.org/license/mit/) for details.
+
+
+## 🙏 Support
+
+Don't forget to star ⭐️ the repository.
+
+
+
+
