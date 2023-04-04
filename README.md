@@ -190,57 +190,29 @@ python engine.py
 
 > *Note*: You should replace engine.py with the actual name of the Python script containing the code. Additionally, you should make sure that the video file and metadata directory exist and are accessible.
 
-## Contribution📈
+## Contributing📈
 
-If you wish to contribute to this project, feel free to fork the repository and submit a pull request. We welcome all contributions that improve the functionality or usability of the script.
+Thank you for considering and taking the time to contribute! Product focuses on 100% education as well as upskilling developing countries and rural areas. We welcome all contributions that improve the functionality or usability of the script.
 
-### Contribution Guidelines🦮
+The following are guidelines for contributing to this project.
 
-If you want to contribute to this project, follow the steps below:
+## How to Report Bugs
 
-1. Fork the repository by clicking on the ["Fork"](https://github.com/kinshukgoel4/Metadata-Engine/fork) button at the top right corner of the page.
+Please open [a new issue in the appropriate GitHub repository][new-issue] with steps to reproduce the problem you're experiencing.
 
-2. Clone your forked repository to your local machine:
+Be sure to include as much information including screenshots, text output, and both your expected and actual results.
 
-```bash
-git clone https://github.com/your-username/metadata-engine.git
-```
+## How to Request Enhancements
 
-3. Create a new branch to work on. You can name the branch whatever you like, but it should describe the feature you are working on. For example, if you are adding a new feature for object detection, you can name the branch object-detection.
+First, please refer to the applicable [GitHub repository][github-repo] and search [the repository's GitHub issues][issues-list] to make sure your idea has not been (or is not still) considered.
 
-```bash
-git checkout -b <branch-name>
-```
+Then, please [create a new issue in the GitHub repository][new-issue] describing your enhancement.
 
-4. Make your changes to the codebase.
+Be sure to include as much detail as possible including step-by-step descriptions, specific examples, screenshots or mockups, and reasoning for why the enhancement might be worthwhile.
 
-5. Test your changes to make sure they work as expected.
-
-6. Commit your changes:
-
-```
-git commit -m "<commit-message>"
-```
-
-7. Push your changes to your forked repository:
-
-```
-git push origin <branch-name>
-```
-
-8. Create a pull request by clicking on the "New pull request" button on your forked repository page.
-
-9. Wait for your pull request to be reviewed and merged.
-
->NOTE: Please make sure to follow the [Code of conduct](https://github.com/kinshukgoel4/Metadata-Engine/blob/main/CODE_OF_CONDUCT.md) while contributing.
-
-## Useful Links
-
-* [GitHub Forking Guide](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
-* [GitHub Pull Requests Guide](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)
-* [GitHub Issues Guide](https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues)
-* [Contributor Covenant Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/)
-* [MIT License](https://opensource.org/license/mit/)
+[new-issue]: https://github.com/kaiwalyakoparkar/quora-for-college/issues/new/choose
+[github-repo]: https://github.com/kaiwalyakoparkar/quora-for-college/
+[issues-list]: https://github.com/kaiwalyakoparkar/quora-for-college/issues
 
 ## Code of Conduct🏛
 
