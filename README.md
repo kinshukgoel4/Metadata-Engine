@@ -190,6 +190,9 @@ python engine.py
 
 > *Note*: You should replace engine.py with the actual name of the Python script containing the code. Additionally, you should make sure that the video file and metadata directory exist and are accessible.
 
+## 🙌 Want to contribute?
+If you would like to contribute to this api please go ahead and read [Code of Conduct](https://github.com/kinshukgoel4/Metadata-Engine/blob/main/CODE_OF_CONDUCT.md) and [Contribution Guideline](https://github.com/kinshukgoel4/Metadata-Engine/blob/main/CONTRIBUTING.md). Once you read through them agree to policies of this project go ahead with **Contribution** steps 
+
 ## Contributing📈
 
 Thank you for considering and taking the time to contribute! Product focuses on 100% education as well as upskilling developing countries and rural areas. We welcome all contributions that improve the functionality or usability of the script.
