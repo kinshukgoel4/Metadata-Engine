@@ -8,37 +8,40 @@ If you want to contribute to this project, follow the steps below:
 
 1. Fork the repository by clicking on the ["Fork"](https://github.com/kinshukgoel4/Metadata-Engine/fork) button at the top right corner of the page.
 
-2. Clone your forked repository to your local machine:
+2. Once you are in your fork the url should look something like
+`https://github.com/<YOUR-USERNAME>/Metadata-Engine/`
 
-```bash
-git clone https://github.com/your-username/metadata-engine.git
-```
+3. Go to preferred folder in your computer and paste the following command (Only one of it if you don't have ssh setup then go with HTTP command)
+   - HTTP
+   `git clone https://github.com/<YOUR-USERNAME>/Metadata-Engine.git`
+   - SSH
+   `git clone git@github.com:<YOUR-USERNAME>/Metadata-Engine.git`
 
-3. Create a new branch to work on. You can name the branch whatever you like, but it should describe the feature you are working on. For example, if you are adding a new feature for object detection, you can name the branch object-detection.
+4. Now enter the folder by running the following command
+`cd Metadata-Engine`
 
-```bash
-git checkout -b <branch-name>
-```
+5. Now you are in the `Metadata-Engine` folder
 
-4. Make your changes to the codebase.
+6. Now do ahead and create a new branch and move to the branch
+`git checkout -b fix-issue-<ISSUE-NUMBER>`
 
-5. Test your changes to make sure they work as expected.
+7.  Make your changes to the codebase. Test your changes to make sure they work as expected.
 
-6. Commit your changes:
+8. After done you can now push this changes. for doing that follow the following command chain
+   - `git status` (Shows the changed files)
+   - `git add .` (Will add all the files to staging area)
+   - `git commit -m "feat/docs/fix: :emoji-name: <EXPLAIN-YOUR_CHANGES>"`
+   - `git push origin fix-issue-<ISSUE-NUMBER>`
 
-```
-git commit -m "<commit-message>"
-```
+9. After this go to your forked GitHub repository and go to `Pull Request` section. Now you might be able to see a pop up saying **Pull Request**. Click on the popup and you will be redirected to pull request page
 
-7. Push your changes to your forked repository:
+10. Now fill in the form template of the pull request
 
-```
-git push origin <branch-name>
-```
+11. Click on **Submit**
 
-8. Create a pull request by clicking on the "New pull request" button on your forked repository page.
+12. Hurrey! You just did your contribution to this project 🎉
 
-9. Wait for your pull request to be reviewed and merged.
+13. Wait for your pull request to be reviewed and merged.
 
 >NOTE: Please make sure to follow the [Code of conduct](https://github.com/kinshukgoel4/Metadata-Engine/blob/main/CODE_OF_CONDUCT.md) while contributing.
 
