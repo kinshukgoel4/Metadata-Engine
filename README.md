@@ -18,7 +18,7 @@
 
 Python scripts to build a Metadata Engine which takes a large amount of raw HD video footage, generate useful and well-defined metadata for each video file, each distinct moment called frame in each video file. 
 
-## Feel free to Demo📽️ the [video](https://vimeo.com/815832114?share=copy) for better understanding of the project.
+## Demo the Working Video📽️ [here](https://vimeo.com/815832114?share=copy).
 
 ## What it does?🤔
 
