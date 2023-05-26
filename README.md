@@ -99,11 +99,15 @@ After testing the code on a video, the *[real-time](https://openvoice-tech.net/i
 - Optimizing Frame Size: Testing with a reduced frame size of 640x360 pixels resulted in improved performance. The video was processed in approximately 40 seconds, yielding a real-time factor of 1.5.
 
 ## ⚖️ Trade-offs
-The performance of the script can be improved by making certain trade-offs. One option is to reduce the frame rate of the video. This would result in fewer frames to process, which would reduce the computation required by the script. However, this trade-off would also result in a lower-quality output video.
 
-Another option is to use a smaller and faster object detection model. The YOLOv5s model used in the script is a relatively small and fast model compared to other object detection models. However, there are even smaller and faster models, such as YOLOv3-tiny and SSD MobileNet, which could improve the performance of the script at the cost of reduced accuracy.
+Several trade-offs can be considered to improve performance.
 
-Finally, another option is to use hardware acceleration, such as a GPU or an ASIC, to speed up the computation. This would require additional hardware and may not be cost-effective for small-scale applications. However, for large-scale applications, such as real-time video surveillance, hardware acceleration can significantly improve the performance of the script.
+- Frame Rate Reduction: Reducing the video's frame rate would decrease the number of frames to process, improving script performance. However, this would lower the output video quality.
+- Smaller and Faster Models: Using smaller and faster object detection models like YOLOv3-tiny or SSD MobileNet can enhance performance at the expense of reduced accuracy.
+- Hardware Acceleration: Employing hardware acceleration, such as GPUs or ASICs, can significantly speed up computation, particularly for large-scale applications. However, this requires additional hardware resources and may not be cost-effective for small-scale setups.
+ 
+By carefully considering these trade-offs, you can make informed decisions to improve the performance of your script based on your specific requirements and constraints.
+
 
 ## 💡 Performance Considerations
 
