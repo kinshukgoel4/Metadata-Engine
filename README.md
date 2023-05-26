@@ -8,9 +8,17 @@
 	<a href="https://github.com/kinshukgoel4/"><img src="https://img.shields.io/badge/Maintained%3F-yes-brightgreen.svg?v=103"></a>
 </p>
 
+<p align="center">
+  
+ <img src="https://user-images.githubusercontent.com/98045941/227730608-c3aea0cc-f82e-49d4-82cd-361a35f53ef6.gif" alt="Hello Gif" width="700">
+
+ <h3><p align="center"><b>👋 Welcome to Metadata Engine!</b></p></h3>
+ 
+</p>
+
 Python scripts to build a Metadata Engine which takes a large amount of raw HD video footage, generate useful and well-defined metadata for each video file, each distinct moment called frame in each video file. 
 
-## Demo📽️ the [video](https://vimeo.com/815832114?share=copy)
+## Feel free to Demo📽️ the [video](https://vimeo.com/815832114?share=copy) to better understand the project
 
 ## What it does?🤔
 
