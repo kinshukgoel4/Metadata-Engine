@@ -22,9 +22,11 @@ Python scripts to build a Metadata Engine which takes a large amount of raw HD v
 
 ## System Overview 🚀
 
-The system takes as input a video file and a directory path from command line to save the metadata files. It uses OpenCV to read the frames from the video and passes each frame through the YOLOv5 model to detect people. The bounding box coordinates for the detected people are saved in a JSON file along with the frame number and the number of detected people in the frame. 
-
-
+- Takes a video file and directory path as input.
+- Utilizes OpenCV to read frames from the video.
+- Applies the YOLOv5 model to detect people in each frame.
+- Saves bounding box coordinates, frame number, and the number of detected people in a JSON file.
+- Supports command-line interface for input and output customization.
 
 ## Metadata Generated📈
 
