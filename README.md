@@ -10,15 +10,20 @@
 
 Python scripts to build a Metadata Engine which takes a large amount of raw HD video footage, generate useful and well-defined metadata for each video file, each distinct moment called frame in each video file. 
 
+## Demo📽️ the [video](https://vimeo.com/815832114?share=copy)
 
 ## What it does?🤔
 
-This system uses the YOLOv5 object detection model to detect people in a given video and save the metadata for each frame in a JSON file. It also draws bounding boxes around the detected people in real-time for visualization purposes. With huge amounts of raw HD video footage, it generates a variety of metadata, such as per-frame face tracking, unique face detection, object detection and person tokenization per video. The user gets a whatsapp message regarding the status of metadata generation. It even stores the json ouput file in CockroachDB Database. 
-
+- Utilizes YOLOv5 object detection model to detect people in videos.
+- Extracts metadata for each frame, including face tracking, face detection, object detection, and person tokenization.
+- Real-time visualization with bounding boxes around detected people.
+- Sends WhatsApp messages to the user, providing status updates on metadata generation.
+- Stores the generated JSON output file in a CockroachDB database.
 
 ## System Overview 🚀
 
 The system takes as input a video file and a directory path from command line to save the metadata files. It uses OpenCV to read the frames from the video and passes each frame through the YOLOv5 model to detect people. The bounding box coordinates for the detected people are saved in a JSON file along with the frame number and the number of detected people in the frame. 
+
 
 
 ## Metadata Generated📈
