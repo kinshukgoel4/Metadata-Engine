@@ -69,15 +69,14 @@ For each detected object in the frame, the following metadata is saved in a dict
 
 ## Perfomance💪
 
-The performance of the Engine can be evaluated in terms of its [real-time factor](https://openvoice-tech.net/index.php/Real-time-factor#:~:text=If%20it%20takes%20time%20f%20%28d%29%20to%20process,1%2C%20the%20processing%20is%20done%20%22in%20real%20time%22.). The Engine processes each frame of the video and generates metadata in the form of a JSON file for each frame. It also displays the video with bounding boxes around the detected people.
-
-The performance of the Engine is highly dependent on the hardware specs of the machine it is running on. In general, the [real-time factor](https://openvoice-tech.net/index.php/Real-time-factor#:~:text=If%20it%20takes%20time%20f%20%28d%29%20to%20process,1%2C%20the%20processing%20is%20done%20%22in%20real%20time%22.) of the Engine can be improved by using a more powerful machine with a faster CPU and GPU.
-
-However, the YOLOv5 model, which is known for its fast inference time and high accuracy. This means that the Engine should be able to process the video in near [real-time](https://openvoice-tech.net/index.php/Real-time-factor#:~:text=If%20it%20takes%20time%20f%20%28d%29%20to%20process,1%2C%20the%20processing%20is%20done%20%22in%20real%20time%22.) on a mid-range machine with a decent GPU.
-
-To further improve the performance of the Engine, it may be helpful to experiment with different YOLOv5 models with varying sizes and architectures, as well as adjusting the input image size for inference. Additionally, optimizing the code for parallel processing and utilizing multi-threading could also improve the real-time factor of the Engine.
-
-Overall, the given code has the potential to achieve real-time performance on mid-range machines with a decent GPU. However, to achieve better performance on weaker machines or to scale the Engine to process larger videos, further optimization may be necessary.
+- Performance Evaluation: The Engine's performance is measured in terms of [real-time factor](https://openvoice-tech.net/index.php/Real-time-factor#:~:text=If%20it%20takes%20time%20f%20%28d%29%20to%20process,1%2C%20the%20processing%20is%20done%20%22in%20real%20time%22.).
+- Processing Efficiency: The Engine analyzes each frame of the video and generates metadata in JSON format for each frame.
+- Real-time Display: The Engine displays the video with bounding boxes around the detected people in real-time.
+- Hardware Dependency: The performance of the Engine relies on the hardware specifications of the machine it runs on, particularly the CPU and GPU.
+- YOLOv5 Model: The Engine benefits from the YOLOv5 model, which offers fast inference time and high accuracy.
+- Real-time Processing: On a mid-range machine with a decent GPU, the Engine can process videos in near real-time.
+- Optimization Strategies: Experimenting with different YOLOv5 models, adjusting input image size, and optimizing code for parallel processing and multi-threading can further improve the Engine's performance.
+- Scalability Considerations: To achieve real-time performance on weaker machines or handle larger videos, additional optimization may be required.
 
 ## 🚀 Performance Benchmarks
 
