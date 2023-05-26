@@ -92,11 +92,11 @@ After testing the code on a video, the *[real-time](https://openvoice-tech.net/i
 
 ## 💻 Performance Evaluation
 
-We ran the script on a desktop computer with an AMD Ryzen 5 4600H processor and 8 GB of RAM. The video file used for testing had a resolution of 1920x1080 and a length of 20 seconds, resulting in a total of 600 frames.
-
-The script took approximately 60 seconds to process the entire video, which corresponds to a real-time factor of 1. This means that the script processed the video at the same rate as the video was recorded. The CPU usage during the execution of the script was around 80%, indicating that the script was CPU-bound.
-
-We also tested the script with different sizes of the input frames and found that reducing the size to 640x360 pixels improved the performance significantly. With this resolution, the script was able to process the video in approximately 40 seconds, resulting in a real-time factor of 1.5. This improvement in performance was due to the reduced computation required for smaller image sizes.
+- Test Setup: The script was executed on a desktop computer with an AMD Ryzen 5 4600H processor and 8 GB of RAM.
+- Video Details: The test video had a resolution of 1920x1080 and a duration of 20 seconds, resulting in 600 frames.
+- Processing Time: The script took approximately 60 seconds to process the entire video, achieving a real-time factor of 1 (processing time equals video duration).
+- CPU Usage: During script execution, the CPU usage was around 80%, indicating that the script was primarily CPU-bound.
+- Optimizing Frame Size: Testing with a reduced frame size of 640x360 pixels resulted in improved performance. The video was processed in approximately 40 seconds, yielding a real-time factor of 1.5.
 
 ## ⚖️ Trade-offs
 The performance of the script can be improved by making certain trade-offs. One option is to reduce the frame rate of the video. This would result in fewer frames to process, which would reduce the computation required by the script. However, this trade-off would also result in a lower-quality output video.
