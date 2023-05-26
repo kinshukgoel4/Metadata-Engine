@@ -153,31 +153,15 @@ The following libraries are required to run this code:
 
 The YOLOv5 model is loaded using the PyTorch `torch.hub.load` method.
 
-## 🚀 Usage
 
-To use this code, simply instantiate an Engine object with the path to the video file and the directory where the metadata files should be saved. Then call the run or detect_people method to start the person detection process.
-
-python
-video_path = "video1.mp4"
-metadata_dir = "/path/to/metadata/directory"
-
-
-engine = Engine(video_path, metadata_dir)
-engine.run()
-
-The run method will display the video frames with the detected bounding boxes in a window. The detect_people method performs the same detection process but does not display the frames in a window.
-
-
-## Setup Instructions 🛠️
+## Setup Instructions🛠️ and Usage🚀
 1. Clone the Reporsitory
 
 ```
 git clone "https://github.com/vipassana-01/metadata-engine.git"
 ```
 
-
 2. To set up the environment using pip, run the following command in the terminal:
-
 
 ```
 pip install -r requirements.txt
@@ -192,22 +176,24 @@ conda activate yolov5
 
 4. After activating the environment, then run the Python script using the command:
 
-
+### For single video file
+```bash
+python main.py vidpath metapath
 ```
-python engine.py
+
+### For multiple video files
+```bash
+python main.py vidpath1 vidpath2 vidpath3 metapath1 metapath2 metapath3
 ```
-
-
-> *Note*: You should replace engine.py with the actual name of the Python script containing the code. Additionally, you should make sure that the video file and metadata directory exist and are accessible.
+> *Note*: video1.mp4 and video2.mp4 should be in the project folder or mention appropriate paths. If metadata directory dont exist dont worry they will created automatically in working directory/project folder. Additionally, you should make sure that the video file and metadata directory exist and are accessible.
 
 ## 🙌 Want to contribute?
-If you would like to contribute to this api please go ahead and read [Code of Conduct](https://github.com/kinshukgoel4/Metadata-Engine/blob/main/CODE_OF_CONDUCT.md) and [Contribution Guideline](https://github.com/kinshukgoel4/Metadata-Engine/blob/main/CONTRIBUTING.md). Once you read through them agree to policies of this project go ahead with **Contribution** steps 
+
+If you would like to contribute to this project please go ahead and read [Code of Conduct](https://github.com/kinshukgoel4/Metadata-Engine/blob/main/CODE_OF_CONDUCT.md) and [Contribution Guideline](https://github.com/kinshukgoel4/Metadata-Engine/blob/main/CONTRIBUTING.md). Once you read through them agree to policies of this project go ahead with **Contribution** steps 
 
 ## Contributing📈
 
 Thank you for considering and taking the time to contribute! Product focuses on 100% education as well as upskilling developing countries and rural areas. We welcome all contributions that improve the functionality or usability of the script.
-
-The following are guidelines for contributing to this project.
 
 ## How to Report Bugs
 
