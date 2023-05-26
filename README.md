@@ -18,19 +18,19 @@
 
 Python scripts to build a Metadata Engine which takes a large amount of raw HD video footage, generate useful and well-defined metadata for each video file, each distinct moment called frame in each video file. 
 
-## Feel free to Demo📽️ the [video](https://vimeo.com/815832114?share=copy) to better understand the project
+## Feel free to Demo📽️ the [video](https://vimeo.com/815832114?share=copy) for better understanding of the project.
 
 ## What it does?🤔
 
-- Utilizes YOLOv5 object detection model to detect people in videos.
+- Utilizes YOLOv5 object detection model to detect people and objects in videos.
 - Extracts metadata for each frame, including face tracking, face detection, object detection, and person tokenization.
 - Real-time visualization with bounding boxes around detected people.
 - Sends WhatsApp messages to the user, providing status updates on metadata generation.
-- Stores the generated JSON output file in a CockroachDB database.
+- Stores the generated JSON output file in a CockroachDB database cluster.
 
 ## System Overview 🚀
 
-- Takes a video file and directory path as input.
+- Takes the video file/s and directory path/s as input.
 - Utilizes OpenCV to read frames from the video.
 - Applies the YOLOv5 model to detect people in each frame.
 - Saves bounding box coordinates, frame number, and the number of detected people in a JSON file.
@@ -82,7 +82,7 @@ For each detected object in the frame, the following metadata is saved in a dict
 - Real-time Display: The Engine displays the video with bounding boxes around the detected people in real-time.
 - Hardware Dependency: The performance of the Engine relies on the hardware specifications of the machine it runs on, particularly the CPU and GPU.
 - YOLOv5 Model: The Engine benefits from the YOLOv5 model, which offers fast inference time and high accuracy.
-- Real-time Processing: On a mid-range machine with a decent GPU, the Engine can process videos in near real-time.
+- Real-time Processing: On a mid-range machine with a decent GPU, the Engine can process videos in near real-time factor of less than 1 depending upon the number of frames in video files
 - Optimization Strategies: Experimenting with different YOLOv5 models, adjusting input image size, and optimizing code for parallel processing and multi-threading can further improve the Engine's performance.
 - Scalability Considerations: To achieve real-time performance on weaker machines or handle larger videos, additional optimization may be required.
 
@@ -101,10 +101,10 @@ After testing the code on a video, the *[real-time](https://openvoice-tech.net/i
 ## 💻 Performance Evaluation
 
 - Test Setup: The script was executed on a desktop computer with an AMD Ryzen 5 4600H processor and 8 GB of RAM.
-- Video Details: The test video had a resolution of 1920x1080 and a duration of 20 seconds, resulting in 600 frames.
-- Processing Time: The script took approximately 60 seconds to process the entire video, achieving a real-time factor of 1 (processing time equals video duration).
+- Video Details: The test video had a resolution of 1920x1080 and a duration of 10 seconds, resulting in 1000 frames.
+- Processing Time: The script took approximately 100 seconds to process the entire video, achieving a real-time factor of 1 (processing time equals video duration).
 - CPU Usage: During script execution, the CPU usage was around 80%, indicating that the script was primarily CPU-bound.
-- Optimizing Frame Size: Testing with a reduced frame size of 640x360 pixels resulted in improved performance. The video was processed in approximately 40 seconds, yielding a real-time factor of 1.5.
+- Optimizing Frame Size: Testing with a reduced frame size of 640x360 pixels resulted in improved performance. The video was processed in approximately 70 seconds, yielding a real-time factor of 1.5.
 
 ## ⚖️ Trade-offs
 
@@ -139,13 +139,10 @@ The system uses the following libraries and resources:
 1. [OpenCV](https://pypi.org/project/opencv-python/) for video processing and visualization
 2. [PyTorch](https://pypi.org/project/torch/) for loading the YOLOv5 model
 3. [Ultralytics' YOLOv5](https://github.com/ultralytics/yolov5) repository for accessing the YOLOv5 model
-
 4. [tqdm](https://pypi.org/project/tqdm/) for progress tracking
 5. [PIL](https://pypi.org/project/Pillow/) for image preprocessing
 6. [NumPy](https://pypi.org/project/numpy/) for array manipulation
-
 7. [JSON](https://docs.python.org/3/library/json.html): for saving metadata
-
 
 
 ## 🛠️ Requirements
@@ -166,7 +163,7 @@ The YOLOv5 model is loaded using the PyTorch `torch.hub.load` method.
 1. Clone the Reporsitory
 
 ```
-git clone "https://github.com/vipassana-01/metadata-engine.git"
+git clone "https://github.com/kinshukgoel4/metadata-engine.git"
 ```
 
 2. To set up the environment using pip, run the following command in the terminal:
@@ -217,9 +214,9 @@ Then, please [create a new issue in the GitHub repository][new-issue] describing
 
 Be sure to include as much detail as possible including step-by-step descriptions, specific examples, screenshots or mockups, and reasoning for why the enhancement might be worthwhile.
 
-[new-issue]: https://github.com/kaiwalyakoparkar/quora-for-college/issues/new/choose
-[github-repo]: https://github.com/kaiwalyakoparkar/quora-for-college/
-[issues-list]: https://github.com/kaiwalyakoparkar/quora-for-college/issues
+[new-issue]: https://github.com/kinshukgoel4/Metadata-Engine/issues/new/choose
+[github-repo]: https://github.com/kinshukgoel4/Metadata-Engine/
+[issues-list]: https://github.com/kinshukgoel4/Metadata-Engine/issues
 
 ## Code of Conduct🏛
 
@@ -227,7 +224,7 @@ This project and everyone participating in it is governed by the Metadata Engine
 
 ## Conclusion 🎉
 
-In conclusion, the given script performs person detection on a video file in real-time using the YOLOv5 object detection model. The performance of the script can be improved by reducing the size of the input frames, using a smaller and faster object detection model, or using hardware acceleration. However, these trade-offs come at the cost of reduced accuracy, lower-quality output, or additional hardware requirements.
+In conclusion, the given script performs person and object detection on a video file in real-time using the YOLOv5 object detection model. The performance of the script can be improved by reducing the size of the input frames, using a smaller and faster object detection model, or using hardware acceleration. However, these trade-offs come at the cost of reduced accuracy, lower-quality output, or additional hardware requirements.
 
 ## License🎴
 
@@ -237,7 +234,3 @@ This project is licensed under the [MIT License](https://opensource.org/license/
 ## 🙏 Support
 
 Don't forget to star ⭐️ the repository.
-
-
-
-
