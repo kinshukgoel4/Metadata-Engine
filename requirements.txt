@@ -1,11 +1,6 @@
-numpy==1.22.0
-opencv-python==4.5.5.62
-Pillow==9.3.0
-tqdm==4.62.3
-torch==1.13.1
-torchvision==0.10.1
-yolov5==5.0.5
-psycopg2-binary==2.9.1
-moviepy==1.0.3
-SpeechRecognition==3.8.1
-twilio==6.63.0
+flask
+torch
+opencv-python-headless
+tqdm
+Pillow
+numpy
