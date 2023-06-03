@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'Metadata-Engine'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9D13964831A74585AB7416D571DBCD99 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_1FE07EC0861A4EA98BBCDCAB539AB11A }}
