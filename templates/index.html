@@ -83,7 +83,7 @@
   
     processBtn.disabled = true;
   
-    fetch('http://localhost:5000/process-video', {
+    fetch('/process-video', {
       method: 'POST',
       body: formData
     })
@@ -108,7 +108,7 @@
   }
   
   function downloadMetadata() {
-    window.location.href = 'http://localhost:5000/download-metadata';
+    window.location.href = '/download-metadata';
   }
   
   </script>
