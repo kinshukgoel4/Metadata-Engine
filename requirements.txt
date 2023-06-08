@@ -8,3 +8,4 @@ yolov5
 pandas
 torchvision
 gunicorn
+waitress
