@@ -172,7 +172,7 @@ git clone "https://github.com/kinshukgoel4/metadata-engine.git"
 pip install -r requirements.txt
 ```
 
-3. To set up the environment using conda,run the following command in the terminal:
+3. To set up the environment using conda, run the following command in the terminal:
 
 ```bash
 conda env create -f environment.yml
@@ -181,15 +181,11 @@ conda activate yolov5
 
 4. After activating the environment, then run the Python script using the command:
 
-### For single video file
 ```bash
-python main.py vidpath metapath
+python engine.py
 ```
 
-### For multiple video files
-```bash
-python main.py vidpath1 vidpath2 vidpath3 metapath1 metapath2 metapath3
-```
+
 > *Note*: video1.mp4 and video2.mp4 should be in the project folder or mention appropriate paths. If metadata directory dont exist dont worry they will created automatically in working directory/project folder. Additionally, you should make sure that the video file and metadata directory exist and are accessible.
 
 ## 🙌 Want to contribute?
