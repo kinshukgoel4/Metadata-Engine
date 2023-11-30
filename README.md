@@ -182,7 +182,7 @@ conda activate yolov5
 4. After activating the environment, then run the Python script using the command:
 
 ```bash
-python engine.py
+python app.py
 ```
 
 
